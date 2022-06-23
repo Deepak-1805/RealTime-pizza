@@ -1,0 +1,39 @@
+<Section class="hero py-7">
+    <div class="container mx-auto flex items-center justify-between">
+        <div class="w-1/2 pl-16">
+            <h6 class="text-lg"><em>Welcome! Looking for delicious pizza</em></h6>
+            <h1 class="text-6xl font-bold">Don't Wait !!</h1>
+            <button class="px-6 py-2 rounded-full text-white font-bold mt-4 btn-primary"><a href="/login">Order Now</a></button>
+        </div>
+        <div class="w-1/2 pl-12">
+            <img src="/img/Beautiful-tasty-colorful-pizza.jpg" width="500" height="500"alt="">
+        </div>
+    </div>
+</Section>
+<section class="menu container mx-auto py-8">
+    <div class=" flex items-center justify-center mb-16 ">
+<span class="Swipe-down px-16 text-xl font-bold btn-primary">Add Tasty Pizzas to your plate </span>
+    </div>
+<div class="grid grid-cols-4 col-gap-12 row-gap-16">
+   <% pizzas.forEach(function(pizzas){ %>
+    <div class="w-64">
+        <img  class="mb-4 mx-auto"src="/img/<%=pizzas.image%>" width="120" height="140" >
+        <div class="text-center">
+            <h2 class="mb-4"><%=pizzas.name%></h2>
+            <span class=" size py-1 px-4 rounded-full uppercase text-xs "><%=pizzas.size%></span>
+            <div class="flex items-center justify-around mt-6">
+                <div class="flex items-center ">
+                    <span ><img src="/img/ruppes.png" width="15" height="15"></span>
+                    <span class="font-bold text-left"><%=pizzas.price%></span>
+                </div>
+                <button data-pizza ="<%= JSON.stringify(pizzas) %>"class="add-to-cart px-6 rounded-full btn-primary flex items-center font-bold">
+                    <span>+</span>
+                    <span class="ml-2">Add</span>
+                </button>
+            </div>
+        </div>
+    </div>
+<% }) %>
+
+</div>
+</section>
